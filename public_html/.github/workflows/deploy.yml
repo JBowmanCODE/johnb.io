@@ -15,6 +15,11 @@ jobs:
         server: ftp.johnb.io
         username: 73b3fc06@johnb.io
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./                  # This points to where your files are locally
-        server-dir: /public_html/      # This is where they should go on the server
-        dangerous-clean-slate: true    # This will ensure clean deployment
+        local-dir: ./
+        server-dir: /
+        state-name: .ftp-deploy-sync-state.json
+        dry-run: false
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
