@@ -15,5 +15,6 @@ jobs:
         server: ftp.johnb.io
         username: 73b3fc06@johnb.io
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./public_html/
-        server-dir: ./
+        local-dir: ./                  # This points to where your files are locally
+        server-dir: /public_html/      # This is where they should go on the server
+        dangerous-clean-slate: true    # This will ensure clean deployment
