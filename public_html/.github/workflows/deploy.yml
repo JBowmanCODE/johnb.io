@@ -16,10 +16,5 @@ jobs:
         username: 73b3fc06@johnb.io
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /
-        state-name: .ftp-deploy-sync-state.json
-        dry-run: false
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
+        server-dir: ./ 
+        dangerous-clean-slate: false
