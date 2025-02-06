@@ -15,4 +15,5 @@ jobs:
         server: ftp.johnb.io
         username: 73b3fc06@johnb.io
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: public_html/
+        local-dir: ./public_html/
+        server-dir: ./
