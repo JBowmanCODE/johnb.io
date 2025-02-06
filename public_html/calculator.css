@@ -1,0 +1,133 @@
+/* Calculator Styles */
+#calculator {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#calculator h2 {
+    color: #402e7a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#calculator label {
+    margin-top: 10px;
+    color: #402e7a;
+}
+
+#calculator input, 
+#calculator button {
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#calculator button {
+    background-color: #4c3bcf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#calculator button:hover {
+    background-color: #402e7a;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #333; /* Ensure text is dark in light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode #calculator {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode #calculator h2,
+body.dark-mode #calculator label {
+    color: #62d9ff;
+}
+
+body.dark-mode #calculator input {
+    background-color: #444;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode #output {
+    background-color: #222;
+    border-color: #444;
+    color: white; /* Ensure text is white in dark mode */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    #calculator {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #calculator h2 {
+        font-size: 20px;
+    }
+
+    #calculator input,
+    #calculator button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #output {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Accessibility improvements */
+#calculator input:focus,
+#calculator button:focus {
+    outline: 2px solid #4c3bcf;
+    outline-offset: 2px;
+}
+
+body.dark-mode #calculator input:focus,
+body.dark-mode #calculator button:focus {
+    outline-color: #62d9ff;
+}
+
+/* Print styles */
+@media print {
+    #calculator {
+        page-break-inside: avoid;
+    }
+
+    #calculator,
+    #calculator input,
+    #calculator button,
+    #output {
+        color: black !important;
+        background-color: white !important;
+        border-color: black !important;
+    }
+}

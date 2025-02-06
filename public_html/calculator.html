@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Calculator - JohnB.io</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="Use JohnB.io's Bill Calculator to split bills and calculate tips easily.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/calculator.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <!-- Pyodide script -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
+    <meta name="description" content="JohnB.IO - An AI and development platform for testing and exploring cutting-edge artificial intelligence technologies.">
+        <meta name="keywords" content="AI, artificial intelligence, machine learning, development, programming, API integration, prompt engineering, data visualization">
+        <meta name="subject" content="Artificial Intelligence and Software Development">
+        <meta name="classification" content="Technology">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="language" content="EN">
+        <meta name="author" content="John Bowman">
+        <meta name="designer" content="John Bowman">
+        <meta name="copyright" content="JohnB">
+        <meta name="reply-to" content="contact@johnb.io">
+        <meta name="owner" content="John Bowman">
+        <meta name="url" content="https://johnb.io">
+        <meta name="identifier-URL" content="https://johnb.io">
+        <meta name="category" content="Artificial Intelligence">
+        <meta name="coverage" content="Worldwide">
+        <meta name="distribution" content="Global">
+        <meta name="rating" content="General">
+        
+        <!-- Open Graph meta tags for better social media sharing -->
+        <meta property="og:title" content="JohnB.IO - AI and Development Platform">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://johnb.io">
+            <meta property="og:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+        
+        <!-- Twitter Card meta tags for Twitter sharing -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@JohnBIO">
+        <meta name="twitter:title" content="JohnB.IO - AI and Development Platform">
+        <meta name="twitter:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+        
+        <main>
+            <h1 class="page-title">Bill Calculator</h1>
+            <section id="calculator">
+                <div class="calculator-content">
+                    <label for="total_bill">Total Bill Amount (£):</label>
+                    <input id="total_bill" type="number" step="0.01" placeholder="Enter the total bill amount" required>
+                    
+                    <label for="tip_percentage">Tip Percentage (%):</label>
+                    <input id="tip_percentage" type="number" step="0.1" placeholder="Enter the tip percentage" required>
+                    
+                    <label for="num_people">Number of People:</label>
+                    <input id="num_people" type="number" placeholder="Enter the number of people" required>
+                    
+                    <button id="calculate-button">Calculate</button>
+                    <div id="output" aria-live="polite"></div>
+                </div>
+            </section>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="/scripts.js" defer></script>
+    <script src="/calculator.js" defer></script>
+ 
+</body>
+</html>

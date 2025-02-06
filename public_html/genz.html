@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Z Translator - JohnB.io</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="Translate your text into Gen Z slang with our AI-powered tool.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="genz.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+        
+        <main>
+            <h1 class="page-title">Gen Z Translator</h1>
+            <div class="genz-section">
+                <div class="input-section">
+                    <h2>Input Your Text</h2>
+                    <textarea id="input-text" placeholder="Paste your text here or upload a file"></textarea>
+                    <input type="file" id="file-upload" accept=".txt,.doc,.docx">
+                    <button id="translate-btn">Translate to Gen Z</button>
+                </div>
+                <div class="output-section">
+                    <h2>Gen Z Translation</h2>
+                    <div id="output-text"></div>
+                </div>
+            </div>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="/scripts.js" defer></script>
+    <script src="genz.js" defer></script>
+    
+</body>
+</html>

@@ -1,0 +1,234 @@
+/* Refined CSS for Poker Evaluation and Game Planner with Improved Dark Mode */
+
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --button-bg: #02BD9C;
+    --button-text: #ffffff;
+    --radio-bg: #eeeeee;
+    --radio-checked: #02BD9C;
+    --disclaimer-color: #666666;
+    --results-bg: #f9f9f9;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --container-bg: #1e1e1e;
+    --input-bg: #2c2c2c;
+    --input-border: #444444;
+    --button-bg: #02BD9C;
+    --button-text: #ffffff;
+    --radio-bg: #333333;
+    --radio-checked: #02BD9C;
+    --disclaimer-color: #b0b0b0;
+    --results-bg: #2c2c2c;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--container-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+/* Custom Radio Buttons */
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: var(--text-color);
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: var(--radio-bg);
+    border-radius: 50%;
+    border: 2px solid var(--radio-checked);
+}
+
+.radio-container:hover input ~ .checkmark {
+    background-color: var(--radio-bg);
+    opacity: 0.8;
+}
+
+.radio-container input:checked ~ .checkmark {
+    background-color: var(--radio-checked);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio-container .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--container-bg);
+}
+
+/* Input Styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Button styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.submit-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* Results Styling */
+#results {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--results-bg);
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+/* Disclaimer Styling */
+.disclaimer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--disclaimer-color);
+    line-height: 1.4;
+}
+
+.disclaimer2 {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        margin: 60px auto 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .radio-container {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .container {
+        margin-top: 80px;
+    }
+}
+
+/* Accessibility improvements */
+.submit-btn:focus,
+input[type="text"]:focus,
+.radio-container input:focus ~ .checkmark {
+    outline: 2px solid var(--button-bg);
+    outline-offset: 2px;
+}
+
+/* Dark mode link color */
+.dark-mode a {
+    color: #4db6ac;
+}
+
+/* Improve contrast for placeholder text in dark mode */
+.dark-mode input::placeholder {
+    color: #a0a0a0;
+}

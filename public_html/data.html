@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Data Visualization Tool</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="data.css">
+
+
+    <meta name="description" content="JohnB.IO - An AI and development platform for testing and exploring cutting-edge artificial intelligence technologies.">
+        <meta name="keywords" content="AI, artificial intelligence, machine learning, development, programming, API integration, prompt engineering, data visualization">
+        <meta name="subject" content="Artificial Intelligence and Software Development">
+        <meta name="classification" content="Technology">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="language" content="EN">
+        <meta name="author" content="John Bowman">
+        <meta name="designer" content="John Bowman">
+        <meta name="copyright" content="JohnB">
+        <meta name="reply-to" content="contact@johnb.io">
+        <meta name="owner" content="John Bowman">
+        <meta name="url" content="https://johnb.io">
+        <meta name="identifier-URL" content="https://johnb.io">
+        <meta name="category" content="Artificial Intelligence">
+        <meta name="coverage" content="Worldwide">
+        <meta name="distribution" content="Global">
+        <meta name="rating" content="General">
+        
+        <!-- Open Graph meta tags for better social media sharing -->
+        <meta property="og:title" content="JohnB.IO - AI and Development Platform">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://johnb.io">
+            <meta property="og:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+        
+        <!-- Twitter Card meta tags for Twitter sharing -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@JohnBIO">
+        <meta name="twitter:title" content="JohnB.IO - AI and Development Platform">
+        <meta name="twitter:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+</head>
+<body>
+    <div class="container">
+        <h1 contenteditable="true" id="mainTitle">Enhanced Data Visualization Tool</h1>
+        <textarea id="dataInput" placeholder="Paste your data here or upload a file"></textarea>
+        <input type="file" id="fileInput" accept=".csv,.xlsx,.xls">
+        <div id="metricSelector">
+            <h3>Select metrics to visualize:</h3>
+            <div id="metricCheckboxes"></div>
+        </div>
+        <button onclick="visualizeData()">Visualize Data</button>
+        <div id="errorMessage"></div>
+        <div id="chartContainer"></div>
+        <div id="overlayContainer"></div> <!-- Container for overlay inputs -->
+    </div>
+    <script src="data.js"></script>
+</body>
+</html>
+<!--end of code-->

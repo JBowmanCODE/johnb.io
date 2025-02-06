@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Copyeditor - JohnB.io</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="Enhance your writing with AI-powered suggestions and edits.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/editor.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/mammoth@latest/mammoth.browser.min.js"></script>
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="description" content="JohnB.IO - An AI and development platform for testing and exploring cutting-edge artificial intelligence technologies.">
+        <meta name="keywords" content="AI, artificial intelligence, machine learning, development, programming, API integration, prompt engineering, data visualization">
+        <meta name="subject" content="Artificial Intelligence and Software Development">
+        <meta name="classification" content="Technology">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="language" content="EN">
+        <meta name="author" content="John Bowman">
+        <meta name="designer" content="John Bowman">
+        <meta name="copyright" content="JohnB">
+        <meta name="reply-to" content="contact@johnb.io">
+        <meta name="owner" content="John Bowman">
+        <meta name="url" content="https://johnb.io">
+        <meta name="identifier-URL" content="https://johnb.io">
+        <meta name="category" content="Artificial Intelligence">
+        <meta name="coverage" content="Worldwide">
+        <meta name="distribution" content="Global">
+        <meta name="rating" content="General">
+        
+        <!-- Open Graph meta tags for better social media sharing -->
+        <meta property="og:title" content="JohnB.IO - AI and Development Platform">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://johnb.io">
+            <meta property="og:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+        
+        <!-- Twitter Card meta tags for Twitter sharing -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@JohnBIO">
+        <meta name="twitter:title" content="JohnB.IO - AI and Development Platform">
+        <meta name="twitter:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+        
+        <main>
+            <h1 class="page-title">AI Copyeditor</h1>
+            <p class="description">Enhance your writing with AI-powered suggestions and edits.</p>
+            
+            <section class="advanced-options">
+                <section class="advanced-options">
+                    <h3>Advanced Options<button id="toggle-advanced" class="toggle-btn">(Show)</button><span class="tooltip" title="Choose UK or USA, Change writing style, upload your brand style guide.">ⓘ</span></h3>
+                <div id="advanced-content" style="display: none;">
+                    <div class="option-group">
+                        <label for="language-select">Language:</label>
+                        <select id="language-select">
+                            <option value="en-GB">English (UK)</option>
+                            <option value="en-US">English (USA)</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="style-select">Writing Style:</label>
+                        <select id="style-select">
+                            <option value="keep-current">Keep Current Style</option>
+                            <option value="conversational">Conversational</option>
+                            <option value="professional">Professional</option>
+                            <option value="humorous">Humorous</option>
+                            <option value="inspirational">Inspirational</option>
+                            <option value="informative">Informative</option>
+                            <option value="persuasive">Persuasive</option>
+                            <option value="narrative">Narrative</option>
+                            <option value="analytical">Analytical</option>
+                            <option value="critical">Critical</option>
+                            <option value="optimistic">Optimistic</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="brand-guide">Brand Style Guide:</label>
+                        <textarea id="brand-guide" placeholder="Paste your brand style guide here..."></textarea>
+                    </div>
+                    <div class="option-group">
+                        <label for="excluded-words">Excluded Words/Characters:</label>
+                        <textarea id="excluded-words" placeholder="Enter words or characters to exclude, separated by commas..."></textarea>
+                    </div>
+                    <div class="option-group">
+                        <label for="article-length">Article Length:</label>
+                        <select id="article-length">
+                            <option value="natural">Natural Length</option>
+                            <option value="500">500 words</option>
+                            <option value="750">750 words</option>
+                            <option value="1000">1000 words</option>
+                            <option value="1250">1250 words</option>
+                            <option value="1500">1500 words</option>
+                            <option value="summarize">Summarize Article</option>
+                        </select>
+                    </div>
+                    <button id="reset-settings" class="reset-btn">Reset to Default</button>
+                </div>
+            </section>
+            
+            <section class="input-section">
+                <textarea id="article-input" placeholder="Paste your article here or upload a file..."></textarea>
+                <div id="word-count" class="count-display"></div>
+                <div class="input-controls">
+                    <div class="file-upload">
+                        <input type="file" id="file-upload" accept=".txt,.doc,.docx">
+                        <label for="file-upload" class="file-upload-btn"><i class="fas fa-upload"></i> Choose File</label>
+                        <span id="file-chosen">No file chosen</span>
+                    </div>
+                    <button id="analyze-button" class="analyze-btn"><i class="fas fa-search"></i> Analyse Article</button>
+                </div>
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p id="loading-text"></p>
+                    <div id="progress-bar"><div id="progress"></div></div>
+                </div>
+            </section>
+            
+            <section class="results-section" style="display: none;">
+                <h2>Results</h2>
+                <div id="analysis-results"></div>
+                <div class="download-options">
+                    <button id="download-txt" class="download-btn" disabled><i class="fas fa-file-alt"></i> Download as TXT</button>
+                    <button id="download-docx" class="download-btn" disabled><i class="fas fa-file-word"></i> Download as DOCX</button>
+                </div>
+            </section>
+            
+            <aside class="editor-tips">
+                <h3>Tips for best results:</h3>
+                <ul>
+                    <li>Provide clear, well-structured text for better analysis.</li>
+                    <li>Check the AI suggestions and use your judgment for final edits.</li>
+                    <li>Use the tool for general improvements, not for highly specialized content.</li>
+                    <li>AI Copyeditor uses OpenAI to analyse your document with custom prompts. Always review your work after using AI Copyeditor for accuracy.</li>
+                </ul>
+            </aside>
+            
+            <div class="social-share">
+                 <button class="share-btn" data-platform="twitter"><i class="fab fa-twitter"></i></button>
+                <button class="share-btn" data-platform="facebook"><i class="fab fa-facebook-f"></i></button>
+                <button class="share-btn" data-platform="linkedin"><i class="fab fa-linkedin-in"></i></button>
+            </div>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="/scripts.js" defer></script>
+    <script src="editor.js" defer></script>
+
+</body>
+</html>

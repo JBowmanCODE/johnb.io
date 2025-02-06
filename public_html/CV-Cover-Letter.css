@@ -1,0 +1,561 @@
+/* CV & Cover Letter Page Styles */
+:root {
+    --primary-color: #00509e;
+    --primary-dark: #003d73;
+    --success-color: #28a745;
+    --success-dark: #218838;
+    --error-color: #dc3545;
+    --background-light: rgba(255, 255, 255, 0.9);
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #ddd;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.page-title {
+    color: #ffffff;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Section */
+.form-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--background-light);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Form Groups */
+.form-group {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    resize: vertical;
+    min-height: 150px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 80, 158, 0.2);
+}
+
+/* Character Counter */
+.char-counter {
+    position: absolute;
+    right: 10px;
+    bottom: -25px;
+    font-size: 14px;
+    color: var(--text-light);
+    background-color: var(--background-light);
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+/* Submit Section */
+.submit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Progress Container */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+    display: none;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Generating State */
+.generating-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.generating-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Output Section */
+.output-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.output-section.visible {
+    opacity: 1;
+}
+
+.output-group {
+    margin-bottom: 30px;
+    background-color: var(--background-light);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.output-group h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Output Content */
+.output-content {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+/* Output Content Formatting */
+.output-content strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.output-content h1, 
+.output-content h2, 
+.output-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    color: #2c3e50;
+}
+
+.output-content h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.output-content h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.output-content h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.output-content ul,
+.output-content ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.output-content li {
+    margin-bottom: 0.5em;
+}
+
+.output-content p {
+    margin-bottom: 1em;
+}
+
+.output-content .section {
+    margin-bottom: 2em;
+}
+
+.output-content .contact-info {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+.output-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.output-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.output-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+/* Action Buttons */
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    color: white;
+    min-width: 120px;
+    height: 36px;
+}
+
+.action-button:hover {
+    transform: translateY(-1px);
+}
+
+.action-button:active {
+    transform: translateY(0);
+}
+
+.action-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Button Variants */
+.copy-button {
+    background-color: var(--success-color);
+    min-width: 120px;
+}
+
+.copy-button:hover {
+    background-color: var(--success-dark);
+}
+
+.download-button {
+    width: 120px;
+}
+
+.download-pdf {
+    background-color: #dc3545;
+}
+
+.download-pdf:hover {
+    background-color: #c82333;
+}
+
+.download-word {
+    background-color: #007bff;
+}
+
+.download-word:hover {
+    background-color: #0056b3;
+}
+
+.download-txt {
+    background-color: #6c757d;
+}
+
+.download-txt:hover {
+    background-color: #5a6268;
+}
+
+/* Spinner */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--primary-color);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Error Messages */
+.error-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: var(--error-color);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #ef9a9a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.error-close {
+    background: none;
+    border: none;
+    color: var(--error-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.error-close:hover {
+    color: #b71c1c;
+}
+
+/* Validation Message */
+.validation-message {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+textarea:invalid + .validation-message {
+    display: block;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.generating .submit-button {
+    animation: pulse 2s infinite;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1280px) {
+    .form-section,
+    .output-section,
+    .error-container {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+        margin: 20px 0;
+    }
+    
+    .form-section,
+    .output-section {
+        padding: 15px;
+    }
+    
+    .form-group label {
+        font-size: 1.1rem;
+    }
+    
+    textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .output-content {
+        height: 300px;
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-button {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .submit-button {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .form-section,
+    .output-group {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .output-content {
+        background-color: #ffffff;
+    }
+    
+    .char-counter {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Focus and Accessibility */
+.submit-button:focus,
+.action-button:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 80, 158, 0.3);
+}
+
+/* Print Styles */
+@media print {
+    .form-section,
+    .submit-button,
+    .button-container {
+        display: none;
+    }
+    
+    .output-content {
+        height: auto;
+        overflow: visible;
+        border: none;
+        font-size: 12pt;
+        line-height: 1.6;
+    }
+
+    .output-content h1 { font-size: 16pt; }
+    .output-content h2 { font-size: 14pt; }
+    .output-content h3 { font-size: 12pt; }
+    
+    .page-title {
+        color: #000;
+        text-shadow: none;
+    }
+}
+
+/* Helper Classes */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}

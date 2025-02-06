@@ -1,0 +1,116 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+#dataInput {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', Arial, sans-serif;
+    resize: vertical;
+}
+#fileInput {
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+#metricSelector {
+    margin-bottom: 20px;
+}
+#metricCheckboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.metric-checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.metric-checkbox input {
+    margin-right: 5px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #45a049;
+}
+#chartContainer {
+    margin-top: 20px;
+}
+.chart-wrapper {
+    margin-bottom: 40px;
+    position: relative;
+}
+#errorMessage {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.download-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+.download-btn:hover {
+    background-color: #e9ecef;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    #dataInput {
+        height: 100px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .chart-wrapper {
+        height: 300px !important;
+    }
+}
+/*end of code*/

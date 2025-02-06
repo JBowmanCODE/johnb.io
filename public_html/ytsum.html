@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summarizer and Q&A - JohnB.io</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="Summarize YouTube videos and ask questions using our AI-powered tool.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="ytsum.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+
+        <main>
+            <h1 class="page-title">YouTube Video Summarizer and Q&A</h1>
+            <div class="genz-section">
+                <div class="input-section">
+                    <h2>Input YouTube Video URL</h2>
+                    <input type="text" id="video-url" placeholder="Enter YouTube video URL">
+                    <button id="summarize-button">Summarize</button>
+                </div>
+                <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing video...</p>
+                </div>
+                <div id="summary-container" style="display: none;">
+                    <h2>Video Summary</h2>
+                    <div id="summary-content"></div>
+                </div>
+                <div id="qa-container" style="display: none;">
+                    <h2>Ask a Question</h2>
+                    <textarea id="question-input" placeholder="Ask a question about the video"></textarea>
+                    <button id="ask-button">Ask</button>
+                    <div id="answer-container"></div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="/scripts.js" defer></script>
+    <script src="ytsum.js" defer></script>
+    
+</body>
+</html>

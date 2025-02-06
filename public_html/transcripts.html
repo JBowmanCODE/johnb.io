@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Blog Post Generator - JohnB.io</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="Generate SEO-optimized blog posts from YouTube video transcripts or manual input using AI.">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/transcripts.css">
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <meta name="description" content="JohnB.IO - An AI and development platform for testing and exploring cutting-edge artificial intelligence technologies.">
+        <meta name="keywords" content="AI, artificial intelligence, machine learning, development, programming, API integration, prompt engineering, data visualization">
+        <meta name="subject" content="Artificial Intelligence and Software Development">
+        <meta name="classification" content="Technology">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="language" content="EN">
+        <meta name="author" content="John Bowman">
+        <meta name="designer" content="John Bowman">
+        <meta name="copyright" content="JohnB">
+        <meta name="reply-to" content="contact@johnb.io">
+        <meta name="owner" content="John Bowman">
+        <meta name="url" content="https://johnb.io">
+        <meta name="identifier-URL" content="https://johnb.io">
+        <meta name="category" content="Artificial Intelligence">
+        <meta name="coverage" content="Worldwide">
+        <meta name="distribution" content="Global">
+        <meta name="rating" content="General">
+        
+        <!-- Open Graph meta tags for better social media sharing -->
+        <meta property="og:title" content="JohnB.IO - AI and Development Platform">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://johnb.io">
+            <meta property="og:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+        
+        <!-- Twitter Card meta tags for Twitter sharing -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@JohnBIO">
+        <meta name="twitter:title" content="JohnB.IO - AI and Development Platform">
+        <meta name="twitter:description" content="Explore cutting-edge AI technologies and development tools at JohnB.IO.">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+        
+        <main class="blog-generator-main">
+            <h1 class="page-title">YouTube Blog Post Generator</h1>
+            <section class="blog-generator-section">
+                <h2>Generate SEO-Optimized Blog Posts</h2>
+                <p>Enter a YouTube video URL or paste a transcript to generate an SEO-optimized blog post.</p>
+                <p>Note: This will not pass AI Detectors. You should re-write afterwards.</p>
+                
+                <div class="input-container">
+                    <input type="text" id="video-url" placeholder="Enter YouTube video URL" class="video-url-input">
+                    <button id="generate-from-url" class="generate-button">Generate from URL</button>
+                </div>
+                
+                <div class="input-container">
+                    <textarea id="manual-transcript" placeholder="Or copy the transcript from video and paste your transcript here" class="manual-transcript-input"></textarea>
+                    <button id="generate-from-text" class="generate-button">Generate from Text</button>
+                </div>
+                
+                <div id="loading-section" class="loading-indicator">
+                    <div class="spinner"></div>
+                    <p id="loading-message">Generating blog post... This may take up to 45 seconds.</p>
+                </div>
+
+                <div id="result-content" style="display: none;">
+                    <div id="blog-content-wrapper">
+                        <button id="copy-button" class="tooltip" data-tooltip="Copy content">
+                            <!-- SVG will be inserted by JavaScript -->
+                        </button>
+                        <div id="blog-container" class="blog-content"></div>
+                        <div id="word-count" class="word-count"></div>
+                        <div id="video-embed" class="video-embed"></div>
+                    </div>
+                    
+                    <div id="seo-preview" class="seo-preview">
+                        <h3>SEO Preview</h3>
+                        <div class="seo-title"></div>
+                        <div class="seo-url"></div>
+                        <div class="seo-description"></div>
+                    </div>
+
+                    <div class="share-export-container">
+                        <div class="button-row">
+                            <button onclick="shareOnTwitter()" class="share-button twitter tooltip" data-tooltip="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                            <button onclick="shareOnFacebook()" class="share-button facebook tooltip" data-tooltip="Share on Facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                            <button onclick="shareOnLinkedIn()" class="share-button linkedin tooltip" data-tooltip="Share on LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
+                        </div>
+                        <div class="button-row">
+                            <button onclick="exportAsTXT()" class="export-button tooltip" data-tooltip="Download as TXT"><i class="fas fa-file-alt"></i> TXT</button>
+                            <button onclick="exportAsHTML()" class="export-button tooltip" data-tooltip="Download as HTML"><i class="fas fa-file-code"></i> HTML</button>
+                            <button onclick="exportAsWord()" class="export-button tooltip" data-tooltip="Download as Word"><i class="fas fa-file-word"></i> Word</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="/scripts.js" defer></script>
+    <script src="/transcripts.js" defer></script>
+    <script src="/footer.js" defer></script>
+</body>
+</html>

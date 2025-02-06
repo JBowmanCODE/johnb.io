@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator Result</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tip Calculator Result</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Calculation Results</h2>
+            <p>Total Bill Amount: £{{ total_bill:.2f }}</p>
+            <p>Tip Amount: £{{ total_tip:.2f }}</p>
+            <p>Total Amount to be Paid: £{{ total_amount:.2f }}</p>
+            <p>Each Person Should Pay: £{{ amount_per_person:.2f }}</p>
+            <a href="/">Go Back</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* Gen Z Page Styles */
+.page-title {
+    color: #ffffff;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.genz-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-section, .output-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+textarea, #output-text {
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000;
+}
+
+#output-text {
+    background-color: rgba(255, 255, 255, 0.7);
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+#file-upload {
+    margin: 10px 0;
+}
+
+#translate-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4c3bcf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#translate-btn:hover {
+    background-color: #402e7a;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .genz-section {
+        padding: 0 20px;
+    }
+}

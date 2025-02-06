@@ -1,0 +1,134 @@
+.page-title {
+    color: #ffffff;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.text-to-voice-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls label {
+    margin: 5px 10px 5px 0;
+}
+
+.controls select {
+    margin: 5px 10px;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+#startSpeech {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+#startSpeech:hover {
+    background-color: #45a049;
+}
+
+#pauseSpeech {
+    padding: 10px 20px;
+    background-color: #808080; /* Grey color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+#pauseSpeech:hover {
+    background-color: #6e6e6e;
+}
+
+#stopSpeech {
+    padding: 10px 20px;
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+#stopSpeech:hover {
+    background-color: #e53935;
+}
+
+/* Subtitle Styles */
+#subtitleDisplay {
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+    display: none; /* Hidden until speech starts */
+    line-height: 1.5;
+}
+
+#subtitleDisplay span.highlight {
+    background-color: #00A3E1; /* Highlight background color */
+    color: #fff; /* Highlight text color */
+}
+
+#estimatedTime, #timeRemaining {
+    margin-top: 10px;
+}
+
+/* Remove blue border on focus */
+button:focus, select:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+/* Remove blue highlight on active buttons in Chrome */
+button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
